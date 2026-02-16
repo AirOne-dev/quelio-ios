@@ -339,7 +339,10 @@ private struct ReloadToolbarIcon: View {
 }
 
 #Preview("Dashboard Hors Ligne") {
-    let viewModel = PreviewFixtures.makeLoggedInViewModel(offline: true, expandToday: false)
+    let viewModel = PreviewFixtures.makeLoggedInViewModel(
+        offline: true,
+        expansionMode: .collapsed
+    )
     PreviewHost(viewModel: viewModel) {
         DashboardView(viewModel: viewModel)
     }

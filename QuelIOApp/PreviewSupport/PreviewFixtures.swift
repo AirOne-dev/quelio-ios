@@ -6,75 +6,54 @@ enum PreviewFixtures {
     private static let loginResponseJSON = """
     {
       "preferences": {
-        "theme": "forest",
+        "theme": "midnight",
         "minutes_objective": 2280
       },
       "token": "preview-token",
       "weeks": {
-        "2026-w-07": {
+        "2026-w-08": {
           "days": {
-            "09-02-2026": {
-              "hours": [
-                "08:31",
-                "10:41",
-                "10:49",
-                "12:13",
-                "13:19",
-                "15:42",
-                "15:48",
-                "17:47"
-              ],
-              "effective": "07:56",
-              "paid": "08:10"
-            },
-            "10-02-2026": {
+            "16-02-2026": {
               "hours": [
                 "08:30",
-                "12:02",
-                "13:04",
-                "15:40",
-                "15:46",
-                "17:31"
+                "10:34",
+                "10:42",
+                "12:06",
+                "13:06"
               ],
-              "effective": "07:53",
-              "paid": "08:07"
-            },
-            "11-02-2026": {
-              "hours": [
-                "08:32",
-                "10:50",
-                "10:56",
-                "12:07",
-                "13:02",
-                "15:43",
-                "15:51",
-                "17:16"
+              "breaks": {
+                "morning": "00:08",
+                "noon": "01:00",
+                "afternoon": "00:00"
+              },
+              "effective_to_paid": [
+                "+ 00:07 => morning break"
               ],
-              "effective": "07:35",
-              "paid": "07:44"
-            },
-            "12-02-2026": {
-              "hours": [
-                "08:30",
-                "10:41",
-                "10:47"
-              ],
-              "effective": "02:30",
-              "paid": "02:37"
+              "effective": "04:11",
+              "paid": "04:18"
             }
           },
-          "total_effective": "25:54",
-          "total_paid": "26:38"
+          "total_effective": "04:11",
+          "total_paid": "04:18"
         }
       }
     }
     """
 
+    enum ExpansionMode {
+        case today
+        case firstFilled
+        case collapsed
+    }
+
     static var payload: KelioAPIResponse {
         normalizeWeek(from: decodedPayload)
     }
 
-    static func makeLoggedInViewModel(offline: Bool = false, expandToday: Bool = true) -> AppViewModel {
+    static func makeLoggedInViewModel(
+        offline: Bool = false,
+        expansionMode: ExpansionMode = .today
+    ) -> AppViewModel {
         let viewModel = AppViewModel(shouldAutoLogin: false)
         let payload = self.payload
 
@@ -84,22 +63,28 @@ enum PreviewFixtures {
         viewModel.loginError = nil
         viewModel.apiBaseURL = "http://localhost:8080/"
         viewModel.response = payload
-        viewModel.theme = AppTheme.from(serverValue: payload.preferences?.theme) ?? .forest
+        viewModel.theme = AppTheme.from(serverValue: payload.preferences?.theme) ?? .midnight
         viewModel.weeklyObjectiveMinutes = payload.preferences?.minutesObjective ?? 2_280
         viewModel.isOffline = offline
         viewModel.lastSyncDate = Date().addingTimeInterval(-120)
+        viewModel.absences = [:]
 
-        var previewAbsences: [String: AbsenceSection] = [:]
-        if let futureDay = viewModel.dayPresentations.first(where: { !$0.isPast }) {
-            previewAbsences[futureDay.dateKey] = .morning
-        }
-        viewModel.absences = previewAbsences
-
-        if expandToday, let todayKey = viewModel.todayPresentation?.dateKey {
-            viewModel.expandedDays = [todayKey]
-        } else if let firstFilled = viewModel.dayPresentations.first(where: { !$0.timeBlocks.isEmpty }) {
-            viewModel.expandedDays = [firstFilled.dateKey]
-        } else {
+        switch expansionMode {
+        case .today:
+            if let todayKey = viewModel.todayPresentation?.dateKey,
+               let today = viewModel.todayPresentation,
+               !today.timeBlocks.isEmpty {
+                viewModel.expandedDays = [todayKey]
+            } else {
+                viewModel.expandedDays = []
+            }
+        case .firstFilled:
+            if let firstFilled = viewModel.dayPresentations.first(where: { !$0.timeBlocks.isEmpty }) {
+                viewModel.expandedDays = [firstFilled.dateKey]
+            } else {
+                viewModel.expandedDays = []
+            }
+        case .collapsed:
             viewModel.expandedDays = []
         }
 
@@ -112,7 +97,7 @@ enum PreviewFixtures {
         viewModel.username = "martin"
         viewModel.password = "••••••••"
         viewModel.loginError = error
-        viewModel.theme = .forest
+        viewModel.theme = .midnight
         viewModel.apiBaseURL = "http://localhost:8080/"
         return viewModel
     }
@@ -120,17 +105,17 @@ enum PreviewFixtures {
     static func makeLoadingViewModel() -> AppViewModel {
         let viewModel = AppViewModel(shouldAutoLogin: false)
         viewModel.phase = .loading
-        viewModel.theme = .forest
+        viewModel.theme = .midnight
         return viewModel
     }
 
     static var sampleExpandedDay: DayPresentation {
-        let viewModel = makeLoggedInViewModel(offline: false, expandToday: false)
+        let viewModel = makeLoggedInViewModel(offline: false, expansionMode: .firstFilled)
         return viewModel.dayPresentations.first(where: { !$0.timeBlocks.isEmpty }) ?? fallbackDay
     }
 
     static var sampleFutureDay: DayPresentation {
-        let viewModel = makeLoggedInViewModel(offline: false, expandToday: false)
+        let viewModel = makeLoggedInViewModel(offline: false, expansionMode: .firstFilled)
         if let day = viewModel.dayPresentations.first(where: { $0.isPast == false }) {
             return day
         }
@@ -191,7 +176,7 @@ enum PreviewFixtures {
         guard let data = loginResponseJSON.data(using: .utf8),
               let payload = try? JSONDecoder().decode(KelioAPIResponse.self, from: data) else {
             return KelioAPIResponse(
-                preferences: UserPreferences(theme: "forest", minutesObjective: 2_280),
+                preferences: UserPreferences(theme: "midnight", minutesObjective: 2_280),
                 token: "preview-token",
                 weeks: [:],
                 error: nil
@@ -206,20 +191,15 @@ enum PreviewFixtures {
         }
 
         let targetWeekKey = Date.currentISOWeekKey()
-        let targetDates = Date.weekDateKeys()
-        let sortedSourceDays = sourceWeek.days.sorted { lhs, rhs in
-            let lhsDate = Date.parseDataDate(lhs.key) ?? .distantPast
-            let rhsDate = Date.parseDataDate(rhs.key) ?? .distantPast
-            return lhsDate < rhsDate
-        }
+        let targetDates = Set(Date.weekDateKeys())
 
         var mappedDays: [String: DayPayload] = [:]
-        for (index, dateKey) in targetDates.enumerated() {
-            if index < sortedSourceDays.count {
-                mappedDays[dateKey] = sortedSourceDays[index].value
-            } else {
-                mappedDays[dateKey] = DayPayload(hours: [])
-            }
+        for (dateKey, day) in sourceWeek.days where targetDates.contains(dateKey) {
+            mappedDays[dateKey] = day
+        }
+
+        if mappedDays.isEmpty {
+            return payload
         }
 
         return KelioAPIResponse(
@@ -265,6 +245,63 @@ enum PreviewFixtures {
         )
     }
 }
+
+#if DEBUG
+enum ScreenshotScenario: String, CaseIterable {
+    case loading
+    case login
+    case dashboard
+    case dashboardClosed = "dashboard-closed"
+    case settings
+
+    static let launchFlag = "--screenshot"
+
+    static func fromProcessArguments(
+        _ arguments: [String] = ProcessInfo.processInfo.arguments
+    ) -> ScreenshotScenario? {
+        guard let flagIndex = arguments.firstIndex(of: launchFlag) else {
+            return nil
+        }
+        let valueIndex = flagIndex + 1
+        guard arguments.indices.contains(valueIndex) else {
+            return nil
+        }
+
+        return ScreenshotScenario(rawValue: arguments[valueIndex])
+    }
+
+    @MainActor
+    @ViewBuilder
+    func makeView() -> some View {
+        switch self {
+        case .loading:
+            AppRootView(viewModel: PreviewFixtures.makeLoadingViewModel())
+        case .login:
+            AppRootView(viewModel: PreviewFixtures.makeLoggedOutViewModel())
+        case .dashboard:
+            AppRootView(viewModel: PreviewFixtures.makeLoggedInViewModel(
+                offline: false,
+                expansionMode: .today
+            ))
+        case .dashboardClosed:
+            AppRootView(viewModel: PreviewFixtures.makeLoggedInViewModel(
+                offline: false,
+                expansionMode: .collapsed
+            ))
+        case .settings:
+            let viewModel = PreviewFixtures.makeLoggedInViewModel(
+                offline: false,
+                expansionMode: .collapsed
+            )
+            PreviewHost(viewModel: viewModel) {
+                NavigationStack {
+                    SettingsView(viewModel: viewModel)
+                }
+            }
+        }
+    }
+}
+#endif
 
 struct PreviewHost<Content: View>: View {
     let viewModel: AppViewModel

@@ -6,8 +6,18 @@ struct QuelIOApp: App {
 
     var body: some Scene {
         WindowGroup {
+            #if DEBUG
+            if let scenario = ScreenshotScenario.fromProcessArguments() {
+                scenario.makeView()
+                    .environment(\.locale, Locale(identifier: "fr_FR"))
+            } else {
+                AppRootView(viewModel: viewModel)
+                    .environment(\.locale, Locale(identifier: "fr_FR"))
+            }
+            #else
             AppRootView(viewModel: viewModel)
                 .environment(\.locale, Locale(identifier: "fr_FR"))
+            #endif
         }
     }
 }
