@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05367F7673FF78FB10CF8D28 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E95CECB189F41BB804F859 /* Color+Hex.swift */; };
+		074261687408B639FA610307 /* WidgetShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB359C0081FAF36832854E /* WidgetShared.swift */; };
+		0E4B58D558377607A7CF6366 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784036A4F26C39938AABEE5A /* TimelineView.swift */; };
+		191B97BE4917219355BD34F9 /* UXPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF2EA08B0FBA04D226B7F /* UXPrimitives.swift */; };
+		4F56FB37A0C1ABF36AF1ED2B /* PreviewFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B06F5CD192372D660AB408 /* PreviewFixtures.swift */; };
+		5426A59223EAC84447151F1C /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7C2AB8B3E5C7630CDFEC0 /* SessionStore.swift */; };
+		6C481C80498E957F12D55F6F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC7055E2CCF39BF0AC04E0 /* LoginView.swift */; };
+		70F1999CBC7CE36C4F5390BD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13720678ADC575257FB6878 /* DashboardView.swift */; };
+		75734EF288D5D29393D93295 /* QuelIOWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF5ECEC197DA09726F63E4 /* QuelIOWidgetBundle.swift */; };
+		7C9457E6AD9181E0BB60891E /* TimeMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C3735CB62846CCD363EC5 /* TimeMath.swift */; };
+		83C3BD48695EA0593EC66C50 /* DayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D187A3A06544638E2FDFEF /* DayCardView.swift */; };
+		84CC5C4F89B2709AE18A594E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404333A365AB850C3A21023C /* Assets.xcassets */; };
+		8A01AB4DA724372315BE3F75 /* DayPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65582041D440BD4DB70B0F /* DayPresentation.swift */; };
+		8BCCAA863DC6F6FC6DA0DF20 /* QuelIOWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44CAF8D368EE4FD8B9593B /* QuelIOWidget.swift */; };
+		8C7B6B4309722558822B9BB9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647AF3B68803F45DA9023C73 /* AppTheme.swift */; };
+		8CE613BFA82DB14F9D7F0205 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354392E7559989F019DECC28 /* APIModels.swift */; };
+		AF98ABD70E03BF166BC30FE3 /* QuelIOWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 173D3F96F50BC984B9953853 /* QuelIOWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C47522A0D13F3ACFFBC73D92 /* QuelIOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F55EA72CAD5652BF036B5 /* QuelIOApp.swift */; };
+		C5995A62D2918268A479B1A2 /* KelioAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87B216D5909985F62D8D73 /* KelioAPIClient.swift */; };
+		C66B44FC8C34E175EDF993B2 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E1A85BE1E7DD48BB8888D /* AppRootView.swift */; };
+		D2EFA7877A601B9DDA892245 /* WidgetShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB359C0081FAF36832854E /* WidgetShared.swift */; };
+		D3E208D2F81EFF550F2F7D4C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275504EEF70999EB854AD6B0 /* AppViewModel.swift */; };
+		F38A4F493D6248E1DE374667 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB4BAE6E364557D255B1049 /* SettingsView.swift */; };
+		FC66B816108E170BAEE04887 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF2AC7E08BE4EBF4204BB7 /* Date+Week.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F72182996AC274C9FC37A15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B64CD1CB3C4BBB0EFFD5D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FD8427172E9776C41C8C78D;
+			remoteInfo = QuelIOWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9F47707B8EA37999752C17C0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF98ABD70E03BF166BC30FE3 /* QuelIOWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04E95CECB189F41BB804F859 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		0ABF5ECEC197DA09726F63E4 /* QuelIOWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuelIOWidgetBundle.swift; sourceTree = "<group>"; };
+		173D3F96F50BC984B9953853 /* QuelIOWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuelIOWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B29E2F5210965D21658FBC7 /* QuelIOApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuelIOApp.entitlements; sourceTree = "<group>"; };
+		275504EEF70999EB854AD6B0 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		28B06F5CD192372D660AB408 /* PreviewFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFixtures.swift; sourceTree = "<group>"; };
+		2D7F55EA72CAD5652BF036B5 /* QuelIOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuelIOApp.swift; sourceTree = "<group>"; };
+		321376B767E93AA8FB6B91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		354392E7559989F019DECC28 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		36D187A3A06544638E2FDFEF /* DayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCardView.swift; sourceTree = "<group>"; };
+		404333A365AB850C3A21023C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A44CAF8D368EE4FD8B9593B /* QuelIOWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuelIOWidget.swift; sourceTree = "<group>"; };
+		5A87B216D5909985F62D8D73 /* KelioAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelioAPIClient.swift; sourceTree = "<group>"; };
+		647AF3B68803F45DA9023C73 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		6F65582041D440BD4DB70B0F /* DayPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPresentation.swift; sourceTree = "<group>"; };
+		784036A4F26C39938AABEE5A /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		7B0E1A85BE1E7DD48BB8888D /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		7EB4BAE6E364557D255B1049 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		91A7C2AB8B3E5C7630CDFEC0 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		9E1C3735CB62846CCD363EC5 /* TimeMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMath.swift; sourceTree = "<group>"; };
+		9ECB359C0081FAF36832854E /* WidgetShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetShared.swift; sourceTree = "<group>"; };
+		B099A3C4E644892ACFD2FF38 /* QuelIOWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuelIOWidget.entitlements; sourceTree = "<group>"; };
+		BEEBF2EA08B0FBA04D226B7F /* UXPrimitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXPrimitives.swift; sourceTree = "<group>"; };
+		C13720678ADC575257FB6878 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		EBEC7055E2CCF39BF0AC04E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F40D76398C44C521A8887C34 /* QuelIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuelIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBAF2AC7E08BE4EBF4204BB7 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Week.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		06ACC62F308E23EA68E99EAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04E95CECB189F41BB804F859 /* Color+Hex.swift */,
+				FBAF2AC7E08BE4EBF4204BB7 /* Date+Week.swift */,
+				9E1C3735CB62846CCD363EC5 /* TimeMath.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3E83DC9FCD93707968438820 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				275504EEF70999EB854AD6B0 /* AppViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		58EEFCDE63B3A784F07CA5EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C13720678ADC575257FB6878 /* DashboardView.swift */,
+				36D187A3A06544638E2FDFEF /* DayCardView.swift */,
+				EBEC7055E2CCF39BF0AC04E0 /* LoginView.swift */,
+				7EB4BAE6E364557D255B1049 /* SettingsView.swift */,
+				784036A4F26C39938AABEE5A /* TimelineView.swift */,
+				BEEBF2EA08B0FBA04D226B7F /* UXPrimitives.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A4C276587F22A086EB07FFA = {
+			isa = PBXGroup;
+			children = (
+				DD083FE148C88D7575D1B568 /* QuelIOApp */,
+				A6819499A48803C399E15B7C /* QuelIOWidget */,
+				A8926E4E354B8DB7902074D0 /* Shared */,
+				63D43A6EEB24E338EC00C96E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		606494BE6A33640D2A6A3710 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				404333A365AB850C3A21023C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		63D43A6EEB24E338EC00C96E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F40D76398C44C521A8887C34 /* QuelIO.app */,
+				173D3F96F50BC984B9953853 /* QuelIOWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81F9894D36F081BBEC47F6AF /* PreviewSupport */ = {
+			isa = PBXGroup;
+			children = (
+				28B06F5CD192372D660AB408 /* PreviewFixtures.swift */,
+			);
+			path = PreviewSupport;
+			sourceTree = "<group>";
+		};
+		8DD9F47D47294D38CF942312 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A87B216D5909985F62D8D73 /* KelioAPIClient.swift */,
+				91A7C2AB8B3E5C7630CDFEC0 /* SessionStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9A2EDD65E00096A39F5EA786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				354392E7559989F019DECC28 /* APIModels.swift */,
+				647AF3B68803F45DA9023C73 /* AppTheme.swift */,
+				6F65582041D440BD4DB70B0F /* DayPresentation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6819499A48803C399E15B7C /* QuelIOWidget */ = {
+			isa = PBXGroup;
+			children = (
+				321376B767E93AA8FB6B91BE /* Info.plist */,
+				B099A3C4E644892ACFD2FF38 /* QuelIOWidget.entitlements */,
+				5A44CAF8D368EE4FD8B9593B /* QuelIOWidget.swift */,
+				0ABF5ECEC197DA09726F63E4 /* QuelIOWidgetBundle.swift */,
+			);
+			path = QuelIOWidget;
+			sourceTree = "<group>";
+		};
+		A8926E4E354B8DB7902074D0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9ECB359C0081FAF36832854E /* WidgetShared.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DD083FE148C88D7575D1B568 /* QuelIOApp */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E1A85BE1E7DD48BB8888D /* AppRootView.swift */,
+				1B29E2F5210965D21658FBC7 /* QuelIOApp.entitlements */,
+				2D7F55EA72CAD5652BF036B5 /* QuelIOApp.swift */,
+				9A2EDD65E00096A39F5EA786 /* Models */,
+				81F9894D36F081BBEC47F6AF /* PreviewSupport */,
+				606494BE6A33640D2A6A3710 /* Resources */,
+				8DD9F47D47294D38CF942312 /* Services */,
+				06ACC62F308E23EA68E99EAF /* Utils */,
+				3E83DC9FCD93707968438820 /* ViewModels */,
+				58EEFCDE63B3A784F07CA5EC /* Views */,
+			);
+			path = QuelIOApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		216B506E7B0F000A2C57AD59 /* QuelIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B836AB9492DFF61958D45964 /* Build configuration list for PBXNativeTarget "QuelIO" */;
+			buildPhases = (
+				5D184A9A0B1997ACD6399D82 /* Sources */,
+				69968C51A4E9F3EA4156769C /* Resources */,
+				9F47707B8EA37999752C17C0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9863AA6E01E34CD4C93ED77 /* PBXTargetDependency */,
+			);
+			name = QuelIO;
+			packageProductDependencies = (
+			);
+			productName = QuelIO;
+			productReference = F40D76398C44C521A8887C34 /* QuelIO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FD8427172E9776C41C8C78D /* QuelIOWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F07DA5E83A9527722105BA9 /* Build configuration list for PBXNativeTarget "QuelIOWidget" */;
+			buildPhases = (
+				2F598D20A89CFCF11A3E0D1B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuelIOWidget;
+			packageProductDependencies = (
+			);
+			productName = QuelIOWidget;
+			productReference = 173D3F96F50BC984B9953853 /* QuelIOWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3B64CD1CB3C4BBB0EFFD5D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2600;
+			};
+			buildConfigurationList = A22A4372DF41E24D8E83E8A8 /* Build configuration list for PBXProject "QuelIO" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5A4C276587F22A086EB07FFA;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				216B506E7B0F000A2C57AD59 /* QuelIO */,
+				4FD8427172E9776C41C8C78D /* QuelIOWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69968C51A4E9F3EA4156769C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CC5C4F89B2709AE18A594E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F598D20A89CFCF11A3E0D1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCCAA863DC6F6FC6DA0DF20 /* QuelIOWidget.swift in Sources */,
+				75734EF288D5D29393D93295 /* QuelIOWidgetBundle.swift in Sources */,
+				074261687408B639FA610307 /* WidgetShared.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D184A9A0B1997ACD6399D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE613BFA82DB14F9D7F0205 /* APIModels.swift in Sources */,
+				C66B44FC8C34E175EDF993B2 /* AppRootView.swift in Sources */,
+				8C7B6B4309722558822B9BB9 /* AppTheme.swift in Sources */,
+				D3E208D2F81EFF550F2F7D4C /* AppViewModel.swift in Sources */,
+				05367F7673FF78FB10CF8D28 /* Color+Hex.swift in Sources */,
+				70F1999CBC7CE36C4F5390BD /* DashboardView.swift in Sources */,
+				FC66B816108E170BAEE04887 /* Date+Week.swift in Sources */,
+				83C3BD48695EA0593EC66C50 /* DayCardView.swift in Sources */,
+				8A01AB4DA724372315BE3F75 /* DayPresentation.swift in Sources */,
+				C5995A62D2918268A479B1A2 /* KelioAPIClient.swift in Sources */,
+				6C481C80498E957F12D55F6F /* LoginView.swift in Sources */,
+				4F56FB37A0C1ABF36AF1ED2B /* PreviewFixtures.swift in Sources */,
+				C47522A0D13F3ACFFBC73D92 /* QuelIOApp.swift in Sources */,
+				5426A59223EAC84447151F1C /* SessionStore.swift in Sources */,
+				F38A4F493D6248E1DE374667 /* SettingsView.swift in Sources */,
+				7C9457E6AD9181E0BB60891E /* TimeMath.swift in Sources */,
+				0E4B58D558377607A7CF6366 /* TimelineView.swift in Sources */,
+				191B97BE4917219355BD34F9 /* UXPrimitives.swift in Sources */,
+				D2EFA7877A601B9DDA892245 /* WidgetShared.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9863AA6E01E34CD4C93ED77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FD8427172E9776C41C8C78D /* QuelIOWidget */;
+			targetProxy = F72182996AC274C9FC37A15F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47AADA6034B2F6EEAE559C04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuelIOWidget/QuelIOWidget.entitlements;
+				DEVELOPMENT_TEAM = W6SUBGY7G6;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QuelIOWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.quel.native.widget;
+				PRODUCT_NAME = QuelIOWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E1D0912BD1A4AC0F49D06A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = QuelIO;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		9795FD4A05B484FB4BD63841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuelIOWidget/QuelIOWidget.entitlements;
+				DEVELOPMENT_TEAM = W6SUBGY7G6;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QuelIOWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.quel.native.widget;
+				PRODUCT_NAME = QuelIOWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A39D2F1CF952F6AD506BA76D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuelIOApp/QuelIOApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = W6SUBGY7G6;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quel io";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.quel.native;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C6093CF2787D194B291E6B2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = QuelIO;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		D4821D5E5CDD7255E25289AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuelIOApp/QuelIOApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = W6SUBGY7G6;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quel io";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.quel.native;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F07DA5E83A9527722105BA9 /* Build configuration list for PBXNativeTarget "QuelIOWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9795FD4A05B484FB4BD63841 /* Debug */,
+				47AADA6034B2F6EEAE559C04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A22A4372DF41E24D8E83E8A8 /* Build configuration list for PBXProject "QuelIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6093CF2787D194B291E6B2D /* Debug */,
+				8E1D0912BD1A4AC0F49D06A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B836AB9492DFF61958D45964 /* Build configuration list for PBXNativeTarget "QuelIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4821D5E5CDD7255E25289AC /* Debug */,
+				A39D2F1CF952F6AD506BA76D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3B64CD1CB3C4BBB0EFFD5D7 /* Project object */;
+}

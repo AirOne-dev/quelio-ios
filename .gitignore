@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Local build artifacts
+build/
+DerivedData/
+.derived/
+
+# Xcode user-specific files
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+
+# CocoaPods
+Pods/
+
+# Misc
+*.log
+*.swp
+*.tmp
+.env
+.env.*
