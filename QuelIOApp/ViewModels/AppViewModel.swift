@@ -99,12 +99,32 @@ final class AppViewModel: ObservableObject {
         currentWeek?.totalPaid ?? "00:00"
     }
 
+    var absenceCreditMinutes: Int {
+        let equivalentDays = dayPresentations.reduce(0.0) { partial, day in
+            switch day.absence {
+            case .none:
+                return partial
+            case .day:
+                return partial + 1.0
+            case .morning, .afternoon:
+                return partial + 0.5
+            }
+        }
+
+        let creditedMinutes = Double(weeklyObjectiveMinutes) * (equivalentDays / 5.0)
+        return Int(creditedMinutes.rounded())
+    }
+
+    var adjustedWeeklyObjectiveMinutes: Int {
+        max(0, weeklyObjectiveMinutes - absenceCreditMinutes)
+    }
+
     var remainingMinutes: Int {
-        weeklyObjectiveMinutes - TimeMath.timeToMinutes(totalPaid)
+        adjustedWeeklyObjectiveMinutes - TimeMath.timeToMinutes(totalPaid)
     }
 
     var progressPercentage: Int {
-        let denominator = max(weeklyObjectiveMinutes, 1)
+        let denominator = max(adjustedWeeklyObjectiveMinutes, 1)
         let ratio = Double(TimeMath.timeToMinutes(totalPaid)) / Double(denominator)
         return max(0, min(100, Int((ratio * 100).rounded())))
     }
@@ -169,12 +189,12 @@ final class AppViewModel: ObservableObject {
     }
 
     var objectiveCompletion: Double {
-        guard weeklyObjectiveMinutes > 0 else { return 0 }
-        return Double(totalPaidMinutes) / Double(weeklyObjectiveMinutes)
+        guard adjustedWeeklyObjectiveMinutes > 0 else { return 0 }
+        return Double(totalPaidMinutes) / Double(adjustedWeeklyObjectiveMinutes)
     }
 
     var objectiveDeltaMinutes: Int {
-        totalPaidMinutes - weeklyObjectiveMinutes
+        totalPaidMinutes - adjustedWeeklyObjectiveMinutes
     }
 
     var activeWeekdaysCount: Int {
@@ -225,7 +245,7 @@ final class AppViewModel: ObservableObject {
     }
 
     var weekdayProgressSnapshots: [DayProgressSnapshot] {
-        let expectedDaily = max(Int(round(Double(weeklyObjectiveMinutes) / Double(activeWeekdaysCount))), 1)
+        let expectedDaily = max(Int(round(Double(adjustedWeeklyObjectiveMinutes) / Double(activeWeekdaysCount))), 1)
 
         return dayPresentations.map { day in
             let minutes = day.totalMinutes
@@ -612,7 +632,7 @@ final class AppViewModel: ObservableObject {
             TimeMath.timeToMinutes($0.start) < TimeMath.timeToMinutes($1.start)
         }
         let todayWorked = today?.totalMinutes ?? 0
-        let dailyTargetMinutes = max(Int(round(Double(weeklyObjectiveMinutes) / Double(activeWeekdaysCount))), 0)
+        let dailyTargetMinutes = max(Int(round(Double(adjustedWeeklyObjectiveMinutes) / Double(activeWeekdaysCount))), 0)
         let todayRemaining = max(dailyTargetMinutes - todayWorked, 0)
         let todayIsWorking = {
             guard let today else { return false }

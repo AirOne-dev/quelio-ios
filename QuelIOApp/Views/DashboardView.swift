@@ -158,7 +158,7 @@ struct DashboardView: View {
                 .tint(viewModel.theme.accent)
                 .scaleEffect(x: 1, y: 1.3, anchor: .center)
 
-            Text("Objectif \(TimeMath.minutesToHourLabel(viewModel.weeklyObjectiveMinutes)) • Synchro \(shortSyncTime)")
+            Text("Objectif \(TimeMath.minutesToHourLabel(viewModel.adjustedWeeklyObjectiveMinutes)) • Synchro \(shortSyncTime)")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
